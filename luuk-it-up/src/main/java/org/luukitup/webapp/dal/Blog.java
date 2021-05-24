@@ -1,23 +1,21 @@
 package org.luukitup.webapp.dal;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 import javax.json.bind.annotation.JsonbTransient;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.List;
+import java.util.Date;
 
 @Entity
-public class Project extends PanacheEntityBase implements Serializable
+public class Blog  extends PanacheEntityBase implements Serializable
 {
     @Id private String id;
     private String title;
-    private String description;
+    private String text;
     private String featuredImageUrl;
-    @ElementCollection
-    @JsonbTransient
-    private List<String> galleryImageUrls;
+    @JsonbTransient private Date dateTime;
 
     public String getId() {
         return id;
@@ -35,12 +33,12 @@ public class Project extends PanacheEntityBase implements Serializable
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getText() {
+        return text;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getFeaturedImageUrl() {
@@ -51,11 +49,11 @@ public class Project extends PanacheEntityBase implements Serializable
         this.featuredImageUrl = featuredImageUrl;
     }
 
-    public List<String> getGalleryImageUrls() {
-        return galleryImageUrls;
+    public Date getDateTime() {
+        return dateTime;
     }
 
-    public void setGalleryImageUrls(List<String> galleryImageUrls) {
-        this.galleryImageUrls = galleryImageUrls;
+    public void setDateTime(Date dateTime) {
+        this.dateTime = dateTime;
     }
 }
