@@ -1,8 +1,11 @@
 package org.luukitup.webapp.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import org.luukitup.webapp.dal.Project;
 import org.luukitup.webapp.logic.ProjectManager;
 import org.luukitup.webapp.model.AddProject;
+import org.luukitup.webapp.model.EditProject;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -20,19 +23,39 @@ public class ProjectController
     ProjectManager projectManager;
 
     @GET
+    @Path("/All")
     public List<Project> GetAllProjects()
     {
         return projectManager.GetAllProjects();
     }
 
+    @GET
+    @Path("{Id}")
+    public Project GetProjectById(@PathParam("Id") String id)
+    {
+        return projectManager.GetProjectById(id);
+    }
+
     //New
     @POST
-    @Path("Add")
+    @Path("/Add")
     public Project AddProject(AddProject addProject)
     {
         return projectManager.CreateProject(addProject);
     }
 
-    //Edit
-    //@PUT
+    @PUT
+    @Path("/Edit")
+    public boolean EditProject(EditProject project){
+        return projectManager.EditProject(project);
+    }
+
+    @DELETE
+    @Path("/Delete")
+    public boolean DeleteProject(String data){
+        JsonObject obj = new Gson().fromJson(data, JsonObject.class);
+
+        return projectManager.DeleteProject(obj);
+    }
+
 }

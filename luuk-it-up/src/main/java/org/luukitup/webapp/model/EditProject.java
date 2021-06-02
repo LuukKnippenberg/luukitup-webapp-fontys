@@ -1,11 +1,11 @@
 package org.luukitup.webapp.model;
 
-public class AddProject
+public class EditProject
 {
+    private String id;
     private String title;
     private String description;
     private String featuredImageUrl;
-//    private List<String> galleryImageUrls;
 
     public String getTitle() {
         return title;
@@ -31,13 +31,11 @@ public class AddProject
         this.featuredImageUrl = featuredImageUrl;
     }
 
-    /*
-    public List<String> getGalleryImageUrls() {
-        return galleryImageUrls;
+    public String getId() {
+        return id;
     }
 
-    public void setGalleryImageUrls(List<String> galleryImageUrls) {
-        this.galleryImageUrls = galleryImageUrls;
+    public void setId(String id) {
+        this.id = id;
     }
-    */
 }

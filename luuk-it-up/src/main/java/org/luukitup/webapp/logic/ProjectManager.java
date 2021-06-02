@@ -1,8 +1,10 @@
 package org.luukitup.webapp.logic;
 
+import com.google.gson.JsonObject;
 import org.luukitup.webapp.dal.Project;
 import org.luukitup.webapp.dal.ProjectRepository;
 import org.luukitup.webapp.model.AddProject;
+import org.luukitup.webapp.model.EditProject;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -44,5 +46,17 @@ public class ProjectManager
     public List<Project> GetAllProjects()
     {
         return projectRepository.FindAll();
+    }
+
+    public Boolean EditProject(EditProject project){
+        return true;
+    }
+
+    public boolean DeleteProject(JsonObject obj) {
+        if (!obj.has("ID")) {
+            return false;
+        }
+        projectRepository.DeleteProject(obj.get("ID").getAsString());
+        return true;
     }
 }

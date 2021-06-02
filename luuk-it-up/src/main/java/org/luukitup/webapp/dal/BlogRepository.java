@@ -17,4 +17,14 @@ public class BlogRepository implements PanacheRepository<Blog>
     {
         return listAll();
     }
+
+    public Boolean DeleteBlog(String id)
+    {
+        try {
+            delete("id", id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }

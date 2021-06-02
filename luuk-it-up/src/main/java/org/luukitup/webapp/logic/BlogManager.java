@@ -1,8 +1,11 @@
 package org.luukitup.webapp.logic;
 
+import com.google.gson.JsonObject;
 import org.luukitup.webapp.dal.Blog;
 import org.luukitup.webapp.dal.BlogRepository;
 import org.luukitup.webapp.model.AddBlog;
+import org.luukitup.webapp.model.EditBlog;
+import org.luukitup.webapp.model.EditProject;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -44,5 +47,17 @@ public class BlogManager
     public List<Blog> GetAllBlogs()
     {
         return blogRepository.FindAll();
+    }
+
+    public Boolean EditBlog(EditBlog blog){
+        return true;
+    }
+
+    public boolean DeleteBlog(JsonObject obj) {
+        if (!obj.has("ID")) {
+            return false;
+        }
+        blogRepository.DeleteBlog(obj.get("ID").getAsString());
+        return true;
     }
 }

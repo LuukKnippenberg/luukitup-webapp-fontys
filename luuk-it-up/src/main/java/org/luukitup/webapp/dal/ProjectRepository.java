@@ -16,4 +16,14 @@ public class ProjectRepository implements PanacheRepository <Project>
     {
         return listAll();
     }
+
+    public Boolean DeleteProject(String id)
+    {
+        try {
+            delete("id", id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }

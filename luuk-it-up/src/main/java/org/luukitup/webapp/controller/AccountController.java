@@ -1,11 +1,8 @@
 package org.luukitup.webapp.controller;
 
 import org.luukitup.webapp.dal.Account;
-import org.luukitup.webapp.dal.Blog;
 import org.luukitup.webapp.logic.AccountManager;
-import org.luukitup.webapp.logic.BlogManager;
 import org.luukitup.webapp.model.AddAccount;
-import org.luukitup.webapp.model.AddBlog;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;

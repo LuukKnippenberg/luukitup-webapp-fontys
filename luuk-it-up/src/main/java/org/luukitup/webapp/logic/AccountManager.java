@@ -2,10 +2,7 @@ package org.luukitup.webapp.logic;
 
 import org.luukitup.webapp.dal.Account;
 import org.luukitup.webapp.dal.AccountRepository;
-import org.luukitup.webapp.dal.Blog;
-import org.luukitup.webapp.dal.BlogRepository;
 import org.luukitup.webapp.model.AddAccount;
-import org.luukitup.webapp.model.AddBlog;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
