@@ -76,4 +76,8 @@ public class Project extends PanacheEntityBase implements Serializable
     public void setLinkToProject(String linkToProject) {
         this.linkToProject = linkToProject;
     }
+
+    public void Save() {
+        persist();
+    }
 }

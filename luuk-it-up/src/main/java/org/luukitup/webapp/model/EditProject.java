@@ -1,8 +1,10 @@
 package org.luukitup.webapp.model;
 
+import javax.persistence.Id;
+
 public class EditProject
 {
-    private String id;
+    @Id private String id;
     private String title;
     private String description;
     private String featuredImageUrl;
@@ -56,4 +58,5 @@ public class EditProject
     public void setLinkToProject(String linkToProject) {
         this.linkToProject = linkToProject;
     }
+
 }

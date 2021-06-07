@@ -1,6 +1,8 @@
 package org.luukitup.webapp.dal;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import org.luukitup.webapp.model.EditProject;
+
 import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
 
@@ -31,17 +33,5 @@ public class ProjectRepository implements PanacheRepository <Project>
             return false;
         }
     }
-
-    //Need to fix
-    public Boolean EditProject(String id)
-    {
-        try {
-            delete("id", id);
-            return true;
-        }catch (Exception e){
-            return false;
-        }
-    }
-
 
 }

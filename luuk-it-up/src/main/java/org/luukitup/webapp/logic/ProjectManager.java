@@ -78,7 +78,16 @@ public class ProjectManager
         return projects;
     }
 
-    public Boolean EditProject(EditProject project){
+    public Boolean EditProject(EditProject projectModel)
+    {
+        Project project = projectRepository.FindById((projectModel.getId()));
+        project.setLinkToProject(projectModel.getLinkToProject());
+        project.setFeatured(projectModel.getFeatured());
+        project.setDescription(projectModel.getDescription());
+        project.setFeaturedImageUrl(projectModel.getFeaturedImageUrl());
+        project.setTitle(projectModel.getTitle());
+        project.Save();
+
         return true;
     }
 

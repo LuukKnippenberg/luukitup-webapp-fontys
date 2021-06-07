@@ -55,6 +55,7 @@ public class ProjectController
     @PUT
     @Path("/Edit")
     public boolean EditProject(EditProject project){
+        System.out.println(project.getTitle());
         return projectManager.EditProject(project);
     }
 
