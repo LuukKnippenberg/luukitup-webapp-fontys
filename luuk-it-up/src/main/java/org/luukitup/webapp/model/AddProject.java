@@ -5,6 +5,7 @@ public class AddProject
     private String title;
     private String description;
     private String featuredImageUrl;
+    private Boolean featured;
 //    private List<String> galleryImageUrls;
 
     public String getTitle() {
@@ -30,6 +31,15 @@ public class AddProject
     public void setFeaturedImageUrl(String featuredImageUrl) {
         this.featuredImageUrl = featuredImageUrl;
     }
+
+    public Boolean getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        this.featured = featured;
+    }
+
 
     /*
     public List<String> getGalleryImageUrls() {

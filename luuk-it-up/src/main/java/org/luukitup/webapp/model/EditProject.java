@@ -6,6 +6,7 @@ public class EditProject
     private String title;
     private String description;
     private String featuredImageUrl;
+    private Boolean featured;
 
     public String getTitle() {
         return title;
@@ -37,5 +38,13 @@ public class EditProject
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Boolean getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        this.featured = featured;
     }
 }

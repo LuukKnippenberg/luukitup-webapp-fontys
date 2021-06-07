@@ -36,6 +36,14 @@ public class ProjectController
         return projectManager.GetProjectById(id);
     }
 
+    @GET
+    @Path("/Amount/{Amount}")
+    public List<Project> GetFeaturedProjects(@PathParam("Amount") int amount) {return  projectManager.GetVariableAmountOfProjects(amount); }
+
+    @GET
+    @Path("/Featured")
+    public List<Project> GetFeaturedProjects() {return projectManager.GetFeaturedProjects(); }
+
     //New
     @POST
     @Path("/Add")

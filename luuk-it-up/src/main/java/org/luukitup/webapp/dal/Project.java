@@ -15,6 +15,7 @@ public class Project extends PanacheEntityBase implements Serializable
     private String title;
     private String description;
     private String featuredImageUrl;
+    private Boolean featured;
     @ElementCollection
     @JsonbTransient
     private List<String> galleryImageUrls;
@@ -57,5 +58,13 @@ public class Project extends PanacheEntityBase implements Serializable
 
     public void setGalleryImageUrls(List<String> galleryImageUrls) {
         this.galleryImageUrls = galleryImageUrls;
+    }
+
+    public Boolean getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        this.featured = featured;
     }
 }

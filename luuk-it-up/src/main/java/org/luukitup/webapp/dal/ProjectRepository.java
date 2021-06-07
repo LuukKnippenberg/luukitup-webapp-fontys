@@ -12,6 +12,11 @@ public class ProjectRepository implements PanacheRepository <Project>
         return find("id", id).firstResult();
     }
 
+    public List<Project> FindFeaturedProjects()
+    {
+        return list("featured", true);
+    }
+
     public List<Project> FindAll()
     {
         return listAll();
@@ -26,4 +31,17 @@ public class ProjectRepository implements PanacheRepository <Project>
             return false;
         }
     }
+
+    //Need to fix
+    public Boolean EditProject(String id)
+    {
+        try {
+            delete("id", id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+
 }

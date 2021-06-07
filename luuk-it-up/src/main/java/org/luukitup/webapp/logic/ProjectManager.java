@@ -23,6 +23,7 @@ public class ProjectManager
         project.setTitle(addProject.getTitle());
         project.setDescription(addProject.getDescription());
         project.setFeaturedImageUrl(addProject.getFeaturedImageUrl());
+        project.setFeatured(addProject.getFeatured());
         //project.setGalleryImageUrls(addProject.getGalleryImageUrls());
         project.setId(UUID.randomUUID().toString());
 
@@ -48,12 +49,40 @@ public class ProjectManager
         return projectRepository.FindAll();
     }
 
+    public List<Project> GetFeaturedProjects()
+    {
+        return projectRepository.FindFeaturedProjects();
+    }
+
+    public List<Project> GetVariableAmountOfProjects(int amount)
+    {
+        List<Project> projects = projectRepository.FindAll();
+        List<Project> sortedProjects = null;
+
+        //Replace with helper function
+        if(projects.size() >= 1)
+        {
+            sortedProjects.add(projects.get(0));
+
+            if(sortedProjects.size() >= 2)
+            {
+                sortedProjects.add(projects.get(1));
+                if(sortedProjects.size() >= 3)
+                {
+                    sortedProjects.add(projects.get(2));
+                }
+            }
+        }
+
+        return projects;
+    }
+
     public Boolean EditProject(EditProject project){
         return true;
     }
 
-    public boolean DeleteProject(JsonObject obj) {
-        if (!obj.has("ID")) {
+    public Boolean DeleteProject(JsonObject obj) {
+        if (!obj.has("id")) {
             return false;
         }
         projectRepository.DeleteProject(obj.get("ID").getAsString());
