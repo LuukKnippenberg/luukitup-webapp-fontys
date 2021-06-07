@@ -91,11 +91,7 @@ public class ProjectManager
         return true;
     }
 
-    public Boolean DeleteProject(JsonObject obj) {
-        if (!obj.has("id")) {
-            return false;
-        }
-        projectRepository.DeleteProject(obj.get("ID").getAsString());
-        return true;
+    public Boolean DeleteProject(String id) {
+        return projectRepository.DeleteProject(id);
     }
 }

@@ -60,11 +60,9 @@ public class ProjectController
     }
 
     @DELETE
-    @Path("/Delete")
-    public boolean DeleteProject(String data){
-        JsonObject obj = new Gson().fromJson(data, JsonObject.class);
-
-        return projectManager.DeleteProject(obj);
+    @Path("/Delete/{Id}")
+    public boolean DeleteProject(@PathParam("Id") String id){
+        return projectManager.DeleteProject(id);
     }
 
 }
