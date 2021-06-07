@@ -24,6 +24,7 @@ public class ProjectManager
         project.setDescription(addProject.getDescription());
         project.setFeaturedImageUrl(addProject.getFeaturedImageUrl());
         project.setFeatured(addProject.getFeatured());
+        project.setLinkToProject(addProject.getLinkToProject());
         //project.setGalleryImageUrls(addProject.getGalleryImageUrls());
         project.setId(UUID.randomUUID().toString());
 

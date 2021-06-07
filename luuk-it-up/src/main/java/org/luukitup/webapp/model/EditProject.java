@@ -7,6 +7,7 @@ public class EditProject
     private String description;
     private String featuredImageUrl;
     private Boolean featured;
+    private String linkToProject;
 
     public String getTitle() {
         return title;
@@ -46,5 +47,13 @@ public class EditProject
 
     public void setFeatured(Boolean featured) {
         this.featured = featured;
+    }
+
+    public String getLinkToProject() {
+        return linkToProject;
+    }
+
+    public void setLinkToProject(String linkToProject) {
+        this.linkToProject = linkToProject;
     }
 }

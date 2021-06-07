@@ -16,6 +16,7 @@ public class Project extends PanacheEntityBase implements Serializable
     private String description;
     private String featuredImageUrl;
     private Boolean featured;
+    private String linkToProject;
     @ElementCollection
     @JsonbTransient
     private List<String> galleryImageUrls;
@@ -66,5 +67,13 @@ public class Project extends PanacheEntityBase implements Serializable
 
     public void setFeatured(Boolean featured) {
         this.featured = featured;
+    }
+
+    public String getLinkToProject() {
+        return linkToProject;
+    }
+
+    public void setLinkToProject(String linkToProject) {
+        this.linkToProject = linkToProject;
     }
 }
