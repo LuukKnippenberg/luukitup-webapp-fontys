@@ -45,6 +45,28 @@ You can then execute your native executable with: `./target/luuk-it-up-1.0.0-SNA
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
 
+## Deployment Preparation
+
+Prepare a new Docker Image
+```shell script
+./mvnw clean package -Dquarkus.container-image.build=true -Dquarkus.container-image.push=true -Dquarkus.container-image.name=luukitup -Dquarkus.container-image.group=luukitup -Dquarkus.container-image.tag=latest
+```
+
+## Ubuntu Deployment
+Deploy the new Docker Image to server
+
+```ubuntu script
+docker stop luukitup
+```
+
+```ubuntu script
+docker remove luukitup
+```
+
+```ubuntu script
+docker run -d -p 8002:3000 --name luukitup --rm luukitup/luukitup:latest
+```
+
 ## Provided examples
 
 ### RESTEasy JAX-RS example
