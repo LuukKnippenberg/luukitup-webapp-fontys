@@ -57,13 +57,4 @@ public class BlogControllerTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    public void DeleteProjectByJsonData() {
-        //Arrange
-
-        //Act
-
-        //Assert
-    }
-
 }
