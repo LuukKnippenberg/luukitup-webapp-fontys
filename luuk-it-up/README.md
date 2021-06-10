@@ -60,7 +60,7 @@ docker stop luukitup
 ```
 
 ```ubuntu script
-docker remove luukitup
+docker pull luukitup/luukitup:latest
 ```
 
 ```ubuntu script
