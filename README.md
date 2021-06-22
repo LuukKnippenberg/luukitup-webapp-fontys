@@ -1,5 +1,6 @@
 # luukitup-webapp-fontys Backend
 This project was made for Fontys ICT Semester 3.
+
 It's a Quarkus Hibernate based project.
 
 
